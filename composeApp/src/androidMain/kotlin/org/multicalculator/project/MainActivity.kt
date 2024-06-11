@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.FlowRowScopeInstance.weight
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
 import androidx.compose.material.Text
@@ -41,12 +43,18 @@ fun CalcRow(){
 
 }
 @Composable
-fun CalcDisplay(){
-
+fun CalcDisplay(display: MutableState<String>){
+   Text(text = display.value,
+       modifier = Modifier.height(50.dp)
+           .padding(5.dp)
+           .fillMaxWidth())
 }
 @Composable
-fun CalcNumericButton(){
-
+fun CalcNumericButton(number: Int, display :MutableState<String>){
+    Button(onClick = { display.value += number.toString() },
+        modifier = Modifier.padding(4.dp)){
+           Text(text = number.toString())
+    }
 }
 @Composable
 fun CalcOperationButton(operation: String,
