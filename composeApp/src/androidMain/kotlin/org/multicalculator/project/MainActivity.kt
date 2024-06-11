@@ -13,6 +13,8 @@ import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -37,7 +39,7 @@ fun AppAndroidPreview() {
 /**The coding starts here**/
 @Composable
 fun CalcView(){
-
+  val displayText = remember { mutableStateOf("0") }
 }
 @Composable
 fun CalcRow(display: MutableState<String>, startNum: Int,
