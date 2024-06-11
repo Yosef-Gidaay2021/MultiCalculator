@@ -6,7 +6,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.FlowRowScopeInstance.weight
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -27,7 +26,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            App()
+          //  App()
+            CalcView()
         }
     }
 }
@@ -35,7 +35,8 @@ class MainActivity : ComponentActivity() {
 @Preview
 @Composable
 fun AppAndroidPreview() {
-    App()
+    //App()
+    CalcView()
 }
 
 
@@ -56,7 +57,6 @@ fun CalcView(){
                   Row(){
                       CalcNumericButton(number = 0, display = displayText)
                       CalcEqualsButton(display = displayText)
-
                   }
               }
               Column(){
