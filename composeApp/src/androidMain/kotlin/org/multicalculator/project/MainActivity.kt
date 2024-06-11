@@ -4,6 +4,7 @@ import App
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.FlowRowScopeInstance.weight
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
 import androidx.compose.material.Text
@@ -48,8 +49,11 @@ fun CalcNumericButton(){
 
 }
 @Composable
-fun CalcOperationButton(){
-
+fun CalcOperationButton(operation: String,
+                        display: MutableState<String>){
+    Button(onClick = { }, modifier = Modifier.padding(4.dp)) {
+        Text(text = operation)
+    }
 }
 @Composable
 fun CalcEqualsButton(display: MutableState<String>){
